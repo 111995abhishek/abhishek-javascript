@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <link rel="stylesheet" href="/HTML/form.css">
+</head>
+<body>
+    <p class="para">An example of simple form</p>
+    <form class="form1">
+        <label for='fname'>First name</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name</label><br>
+        <input type="text" id="lname" name="lname">
+       
+    </form>
+    <button class="btn" onclick="myFunc()">submit</button>
+        
+    <p id="demo"></p>
+    <script>
+        function myFunc(){
+            document.getElementById("demo").innerHTML="your form is submitted";
+        }
+    </script>
+    
+</body>
+</html>

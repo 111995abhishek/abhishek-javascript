@@ -1,0 +1,4 @@
+Assignments:
+	1. refactorinng in vs code
+	2. operators in javascript and few program practise related to operators.
+	3. Notes of the topics covered after getting access of the drive
