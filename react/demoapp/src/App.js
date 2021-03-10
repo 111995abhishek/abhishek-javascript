@@ -15,7 +15,7 @@ class App extends Component {
     <div className="App">
       <h1>welcome to my first react app</h1>
       <h2>app developed by {this.state.name}</h2>
-      <button onClick ={()=>this.setState({name:"singh"})} >click here</button>
+      <button onClick ={()=>this.setState({name:"the team"})} >click here</button>
     </div>
   );
 }
