@@ -6,6 +6,9 @@ class ParentComponent extends Component{
         return(
             <h1>i am the parent component.
                 <FirstChild/>
+                <FirstChild/>
+                <FirstChild/>
+
             </h1>
         );
     }
