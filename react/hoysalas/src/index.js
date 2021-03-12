@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ParentComponent from "./ParentComponent";
+import ComponentX from './ComponentX';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ParentComponent />
+    <ComponentX/>
   </React.StrictMode>,
   document.getElementById('root')
 );
