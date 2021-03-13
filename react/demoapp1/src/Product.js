@@ -28,7 +28,7 @@ class Cart extends Component{
         ))
     )
 
-    componentDidUpdate(){
+    componentDidUpdate(prevProps,prevState){
         console.log('component updated');
     }
 
