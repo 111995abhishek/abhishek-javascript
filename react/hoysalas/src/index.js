@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ComponentX from './ComponentX';
+import ParentComponent from './ParentComponent';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ComponentX/>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
