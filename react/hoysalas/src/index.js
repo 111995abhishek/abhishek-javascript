@@ -5,10 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ComponentX from './ComponentX';
 import ParentComponent from './ParentComponent';
+import ComponentK from './ComponentK';
+import GreetUser from './GreetUser';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <GreetUser/>
   </React.StrictMode>,
   document.getElementById('root')
 );

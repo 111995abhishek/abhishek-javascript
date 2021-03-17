@@ -5,10 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ParentComponent from "./ParentComponent";
 import ComponentLifeCycle from "./ComponentLifeCycle";
+import ComponentK from "./ComponentK";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ComponentLifeCycle />
+    <ComponentK />
   </React.StrictMode>,
   document.getElementById('root')
 );
