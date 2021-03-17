@@ -5,11 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ParentComponent from "./ParentComponent";
 import ComponentLifeCycle from "./ComponentLifeCycle";
-import ComponentK from "./ComponentK";
+import GreetUser from './GreetUser';
+import SimpleCalc from './SimpleCalc';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ComponentK />
+    <SimpleCalc />
   </React.StrictMode>,
   document.getElementById('root')
 );
