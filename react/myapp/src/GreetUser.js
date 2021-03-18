@@ -1,33 +1,40 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 
-class GreetUser extends Component{
+class GreetUser extends Component {
+
     constructor(){
         super();
         this.state={userName:''};
     }
 
-    doGreeting=(event)=>{
+    doGreetings=(event)=>{
+        //console.log("do greetings called" + event.target.value);
         this.setState({userName:event.target.value});
     }
 
-    render(){
+    submitHandler=(event)=>{
+        alert('data received' + this.state.userName);
+    }
 
-        let result;
-        if(this.state.userName !='')
-            result=<h1>greetings {this.state.userName}</h1>;
-        else
-            result='';    
-        return(
+
+
+    render() {
+        let result='';
+        if(this.state.userName != ''){
+            result = <h1>greetings {this.state.userName}</h1>
+        }else
+            result='';
+        return (
             <div>
-                <form>
-                    <h1>Greetings</h1>
-                    <p>Enter your name</p>
-                    <input type='text' onChange={this.doGreeting}/>
-                </form>
-                {result}
-
+               <form onSubmit={this.submitHandler}>
+                   <h1>welcome to greetings app</h1>
+                   <h1>Greetings</h1>
+                   enter your name:<input type="text" onChange={this.doGreetings}/>
+                   <button type="submit">click here</button>
+                </form> 
+                
             </div>
-        )
+        );
     }
 }
 

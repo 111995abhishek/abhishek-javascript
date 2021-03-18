@@ -1,13 +1,75 @@
+.master-container{
+    display: block;
+    text-align: center;
+    padding-left: 450px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}
 .main-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
+    width:fit-content;
+    height: fit-content;
+    border:2px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    
+    
+    
     
 }
 .first-container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    text-align: left;
     
+    
+}
+
+.second-container{
+    text-align: left;
+}
+
+.second-input{
+    width:max-content;
+}
+
+.third-container{
+    text-align: left;
+}
+.forth-container{
+    text-align: left;
+}
+.fifth-container{
+    text-align: left;
+}
+.sixth-container{
+    text-align: left;
+}
+.seventh-container{
+    text-align: left;
+}
+
+.sixth-container-content{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+button{
+    color: ghostwhite;
+    background-color:forestgreen;
+}
+.form-header{
+    text-align: left;
+    color:blue;
+}
+
+.close-form{
+    display:flex;
+    justify-content: flex-end;
 }
