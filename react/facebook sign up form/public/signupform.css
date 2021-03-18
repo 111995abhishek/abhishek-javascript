@@ -4,6 +4,7 @@
     padding-left: 450px;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: blue ;
     
 }
 .main-container{
@@ -11,11 +12,12 @@
     flex-direction: column;
     width:fit-content;
     height: fit-content;
-    border:2px solid black;
+    border:10px solid black;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-top: 10px;
+    background-color: white;
     
     
     
