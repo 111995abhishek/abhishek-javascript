@@ -11,9 +11,9 @@ class Users extends Component {
     }
     render() {
         return (
-            <div style={{padding:"20px",background:"black"}}>
+            <div style={{padding:"20px"}}>
                 {this.state.users.map((user) => 
-                <div className="card" style = {{width: "18rem",border:"2px solid black",margin:"10px",background:"pink"}} key={user.id}>
+                <div className="card" style = {{width: "18rem",border:"10px solid black",margin:"10px",background:"pink"}} key={user.id}>
                 <img src={cartoon} className="card-img-top" alt="mycartoon" width="100px"/>
                 <div className="card-body">
                   <div >  
