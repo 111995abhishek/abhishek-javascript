@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import cartoon from './cartoon.jpg';
 
-class Users extends Component {
+class UserDemo extends Component {
     constructor() {
         super();
         this.state = {
@@ -66,4 +66,4 @@ class Users extends Component {
     }
 }
 
-export default Users;
+export default UserDemo;

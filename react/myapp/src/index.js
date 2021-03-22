@@ -7,10 +7,12 @@ import ParentComponent from "./ParentComponent";
 import ComponentLifeCycle from "./ComponentLifeCycle";
 import GreetUser from './GreetUser';
 import SimpleCalc from './SimpleCalc';
+// import Users from '../../usercard/src/Users';
+import UserDemo from './UserDemo';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SimpleCalc />
+    <UserDemo />
   </React.StrictMode>,
   document.getElementById('root')
 );
