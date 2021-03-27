@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import db from './Firebase';
+import db from '../firebase';
+import {Link} from 'react-router-dom';
 
 class Posts extends Component {
     state = {posts:[]};
@@ -26,6 +27,7 @@ class Posts extends Component {
                     <div className="jumbotron" key={post.id}>
                         <h2>{post.title}</h2>
                         <p>{post.content}</p>
+                        <Link to={'/detailed/${post.id}'}>Read more ....</Link>
                     </div>
                 ))}
 
