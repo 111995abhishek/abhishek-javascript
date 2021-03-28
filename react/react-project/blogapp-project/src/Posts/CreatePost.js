@@ -6,9 +6,13 @@ class CreatePost extends Component {
         title:'',
         content:'',
     };
+
+
     handleChange=(event)=>{
         this.setState({[event.target.name]:event.target.value})
     }
+
+
     handleSubmit=(event)=>{
         event.preventDefault();
 
@@ -22,9 +26,13 @@ class CreatePost extends Component {
         this.setState({title:"",content:""});
     };
 
+
     render() {
+
         return (
+
             <div className="container mt-4">
+
                 <h1>Create posts</h1> 
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
@@ -40,15 +48,20 @@ class CreatePost extends Component {
 
                     <div className="form-group">
                         <label>Content:</label>
-                        <input
+                        <textareabtn
+                        rows={10}
                         type="text"
                         value={this.state.content}
                         onchange={this.handleChange}
                         name="content"
                         className="form-control"
-                        />
+                        ></textarea>
                     </div>    
-                </form>              
+                    <button type="submit" className="btn btn-primary">
+                        post
+                    </button>
+                </form>
+                              
             </div>
         );
     }
