@@ -48,7 +48,7 @@ class CreatePost extends Component {
 
                     <div className="form-group">
                         <label>Content:</label>
-                        <textareabtn
+                        <textarea
                         rows={10}
                         type="text"
                         value={this.state.content}

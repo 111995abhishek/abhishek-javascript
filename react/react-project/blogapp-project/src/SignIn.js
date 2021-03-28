@@ -1,32 +1,27 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 import {auth} from './firebase';
 
-class SignUp extends Component {
-    state={username:"",password:""};
+class SignIn extends Component {
+    state={email:"",password:""}
 
     handleChange=(event)=>{
-        this.setState({[event.target.name]:event.target.value});
+        this.setState({[event.target.name]:event.target.value})
     }
 
     handleSubmit=(event)=>{
         event.preventDefault();
         auth
-        .createUserWithEmailAndPassword(this.state.email,this.state.password)
-        .catch(function (error){
+        .signInWithEmailAndPassword(this.state.email,this.state.password)
+        .catch(function(error){
             console.log(error.message);
-        })
+        });
         this.setState({email:"",password:""});
     };
     render() {
-        const err = this.state.err ? (
-            <div classsname="alert alert-danger" role="alert">
-                {this.state.err}
-            </div>
-        ):null;
-        return(
+        return (
             <form classname="container mt-4" onSubmit={this.handleSubmit}>
-                {err}
+                {/* {err} */}
                 <div classname="form-group">
                     <label>Email:</label>
                     <input
@@ -47,15 +42,13 @@ class SignUp extends Component {
                     classname="form-control"
                     />
                 </div>
-                <button type="submit" classname="btn btn-primary mb-4">
-                    sign up
+                <button type="submit" className="btn btn-primary mb-4">
+                    SignIn
                 </button>
-                &nbsp; Already have an account?<Link to="/signin">sign in</Link>
-
+                &nbsp; Don't have an account? <Link to="/SignUp">SignUp</Link>
             </form>
         );
-        
     }
 }
 
-export default SignUp;
+export default SignIn;
