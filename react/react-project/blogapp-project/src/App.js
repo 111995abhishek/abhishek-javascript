@@ -48,7 +48,7 @@ class App extends Component {
 
   render(){
     return (
-      <div className="App">
+      <div className="App" >
         <BrowserRouter>
           <Navbar user={this.state.user} onSignOut={this.onSignOut} />
           <Switch>
