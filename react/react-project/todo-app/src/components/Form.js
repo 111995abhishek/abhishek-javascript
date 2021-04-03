@@ -6,6 +6,7 @@ function Form  () {
 
     const handleOnChange=(event)=>{
         setTitle(event.target.value);
+        console.log(event.target.value);
         
     };
 
@@ -16,7 +17,10 @@ function Form  () {
             complete:false,
         };
         todoRef.push(todo);
+        alert("data created sucessfully");
     }
+   
+    
     return (
         <div>
             <input type="text" onChange={handleOnChange} value={title}/>
