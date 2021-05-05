@@ -8,3 +8,7 @@
     text-align: center;
     object-fit: contain;
 }
+
+.todo-complete{
+    text-decoration: line-through;
+}

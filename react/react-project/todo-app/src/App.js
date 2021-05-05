@@ -10,12 +10,16 @@ function App() {
   const [title,setTitle] = useState('');
   const [date,setDate] = useState('');
   const [time,setTime] = useState('');
+  
+  
+  
 
   useEffect(() => {
     db.collection("todo").onSnapshot(snapshot => {
-      setTodo(snapshot.docs.map(doc => doc.data()))
+      setTodo(snapshot.docs.map(doc => ({id:doc.id,todos:doc.data().todos})))
     })
   }, []);
+
 
   const addTodo = (event) => {
     event.preventDefault();
@@ -23,7 +27,7 @@ function App() {
     db.collection('todo').add({
       title: title,
       date: date,
-      time: time
+      time: time,
     })
     setTitle('');
     setDate('');
@@ -53,6 +57,7 @@ function App() {
           placeholder="enter the time..."
           onChange={event => setTime(event.target.value)}
           value={time} />
+          
 
         <button type="submit" onClick={addTodo}>Add Todo</button>
 
@@ -60,10 +65,11 @@ function App() {
 
 
       {
-        todo.map(todos => (
-          <Todo title={todos.title} date={todos.date} time={todos.time} />
+        todo.map((todos) => (
+          <Todo  title={todos.title} date={todos.date} time={todos.time}   />
         ))
       }
+      
 
       
     </div>
