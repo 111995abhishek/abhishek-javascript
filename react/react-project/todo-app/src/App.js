@@ -1,37 +1,31 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import { db } from './firebase';
-import Todo from './todo';
+import Todo from './Todo';
+import { Button, Input, FormControl, InputLabel } from '@material-ui/core';
+import firebase from 'firebase';
 
 
 function App() {
 
-  const [todo, setTodo] = useState([]);
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState('')
 
-
-
-
+  
   useEffect(() => {
-    db.collection("todo").onSnapshot(snapshot => {
-      setTodo(snapshot.docs.map(doc => doc.data()))
+    db.collection("todos").orderBy('timeStamp','desc').onSnapshot(snapshot => {
+      setTodos(snapshot.docs.map(doc =>({id:doc.id,todo:doc.data().todo})))
     })
+    
   }, []);
 
 
   const addTodo = (event) => {
     event.preventDefault();
-
-    db.collection('todo').add({
-      title: title,
-      date: date,
-      time: time,
+    db.collection('todos').add({
+      todo:input,
+      timeStamp: firebase.firestore.FieldValue.serverTimestamp()
     })
-    setTitle('');
-    setDate('');
-    setTime('');
   }
 
 
@@ -42,31 +36,22 @@ function App() {
 
       <h1>TODO LIST</h1>
 
-      <form >
-        <input type="text"
+      <FormControl>
+        <InputLabel>Write a todo</InputLabel>
+        <Input type="text"
           placeholder="enter a title..."
-          onChange={event => setTitle(event.target.value)}
-          value={title} />
+          onChange={event => setInput(event.target.value)}
+        />
 
-        <input type="text"
-          placeholder="enter the date..."
-          onChange={event => setDate(event.target.value)}
-          value={date} />
-
-        <input type="text"
-          placeholder="enter the time..."
-          onChange={event => setTime(event.target.value)}
-          value={time} />
-
-
-        <button type="submit" onClick={addTodo}>Add Todo</button>
-
-      </form>
-
-
+      </FormControl>
+      <Button disabled={!input} type="submit" onClick={addTodo} variant="contained" color="primary">
+        Add Todo
+        </Button>
+      {/* <button type="submit" onClick={addTodo}>Add Todo</button> */}
       {
-        todo.map((todos) => (
-          <Todo title={todos.title} date={todos.date} time={todos.time} />
+        todos.map((todo) => (
+          <Todo todo={todo}/>
+          // <li>{todo}</li>
         ))
       }
 
